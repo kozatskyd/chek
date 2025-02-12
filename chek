@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка коду</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            border: 2px solid green;
+            padding: 20px;
+            background-color: black;
+            width: 90%;
+            max-width: 400px;
+        }
+        input {
+            background: black;
+            border: 1px solid green;
+            color: green;
+            font-family: 'Courier New', monospace;
+            padding: 10px;
+            font-size: 18px;
+            width: 100%;
+            text-align: center;
+        }
+        button {
+            background: green;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #result {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔢 Введіть код для перезапуску корабля</h1>
+        <input type="text" id="codeInput" placeholder="Введіть 8-значний код">
+        <button onclick="checkCode()">Перевірити</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkCode() {
+            const correctCode = "73823410"; // Правильний код
+            const userInput = document.getElementById("codeInput").value;
+            const resultText = document.getElementById("result");
+            
+            if (userInput === correctCode) {
+                resultText.style.color = "lime";
+                resultText.innerText = "✅ Код вірний! Корабель перезапущено!";
+            } else {
+                resultText.style.color = "red";
+                resultText.innerText = "❌ Неправильний код. Спробуйте ще раз!";
+            }
+        }
+    </script>
+</body>
+</html>
